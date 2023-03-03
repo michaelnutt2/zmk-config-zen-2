@@ -6,6 +6,13 @@
 #define LOWER   1
 #define RAISE   2
 #define ADJUST  3
+#define COMBO(NAME, BINDINGS, KEYPOS) \
+  combo_name { \
+    timeout-ms = <50>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <0>; \
+  };
 
 / {
     chosen {
@@ -14,26 +21,26 @@
   };
 };
 
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_enter {
-            timeout-ms = <50>;
-            key-positions = <26 42>;
-            bindings = <&kp RET>;
-        };
-        combo_tab {
-            timeout-ms = <50>;
-            key-positions = <26 41>;
-            bindings = <&kp TAB>;
-        };
-        combo_adjust {
-            timeout-ms = <50>;
-            key-positions = <40 43>;
-            bindings = <&mo ADJUST>;
-        };
-    };
-};
+// / {
+//     combos {
+//         compatible = "zmk,combos";
+//         combo_enter {
+//             timeout-ms = <50>;
+//             key-positions = <26 42>;
+//             bindings = <&kp RET>;
+//         };
+//         combo_tab {
+//             timeout-ms = <50>;
+//             key-positions = <26 41>;
+//             bindings = <&kp TAB>;
+//         };
+//         combo_adjust {
+//             timeout-ms = <50>;
+//             key-positions = <40 43>;
+//             bindings = <&mo ADJUST>;
+//         };
+//     };
+// };
 
 // Key Positions 
 //-----------------------------------------------------------------------------------------
@@ -43,6 +50,15 @@
 //                | 39 | 40 | 41 |    | 42 | 43 | 44 |
 
 / {
+
+    combos {
+        compatible = "zmk,combos";
+
+        COMBO(enter, &kp RET, 26 42)
+        COMBO(tab, &kp TAB, 26 41)
+        COMBO(adjust, &mo ADJUST, 40 43)
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
