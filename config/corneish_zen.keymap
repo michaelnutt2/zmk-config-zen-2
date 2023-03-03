@@ -6,14 +6,6 @@
 #define LOWER   1
 #define RAISE   2
 #define ADJUST  3
-#define COMBO(NAME, BINDING, KEYPOS, LAYERS) \
-  combo_##NAME { \
-    timeout-ms = <50>; \
-    bindings = <BINDINGS>; \
-    key-positions = <KEYPOS>; \
-    layers = <LAYERS>; \
-  };
-
 
 / {
     chosen {
@@ -34,9 +26,23 @@
     combos {
         compatible = "zmk,combos";
 
-        COMBO(enter, &kp RET, 24 39, 0)
-        COMBO(tab, &kp TAB, 24 38, 0)
-        COMBO(adjust, &mo ADJUST, 37 40, -1)
+        combo_enter {
+            timeout-ms = <50>;
+            key-positions = <24 39>;
+            bindings = <&kp RET>;
+        };
+
+        combo_tab {
+            timeout-ms = <50>;
+            key-positions = <24 38>;
+            bindings = <&kp TAB>;
+        };
+
+        combo_adjust {
+            timeout-ms = <50>;
+            key-positions = <37 40>;
+            bindings = <&mo ADJUST>;
+        };
     };
 
     keymap {
