@@ -6,6 +6,14 @@
 #define LOWER   1
 #define RAISE   2
 #define ADJUST  3
+#define COMBO(NAME, BINDING, KEYPOS, LAYERS) \
+  combo_##NAME { \
+    timeout-ms = <50>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <LAYERS>; \
+  };
+
 
 / {
     chosen {
@@ -14,58 +22,21 @@
   };
 };
 
-// / {
-//     combos {
-//         compatible = "zmk,combos";
-//         combo_enter {
-//             timeout-ms = <50>;
-//             key-positions = <26 42>;
-//             bindings = <&kp RET>;
-//         };
-//         combo_tab {
-//             timeout-ms = <50>;
-//             key-positions = <26 41>;
-//             bindings = <&kp TAB>;
-//         };
-//         combo_adjust {
-//             timeout-ms = <50>;
-//             key-positions = <40 43>;
-//             bindings = <&mo ADJUST>;
-//         };
-//     };
-// };
 // Key Positions 
 //-----------------------------------------------------------------------------------------
-// | 0  | 1  | 2  | 3  | 4  | 5  |    | 6  | 7  | 8  | 9  | 10 | 11 | 12 |
-// | 13 | 14 | 15 | 16 | 17 | 18 |    | 19 | 20 | 21 | 22 | 23 | 24 | 25 |
-// | 26 | 27 | 28 | 29 | 30 | 31 |    | 32 | 33 | 34 | 35 | 36 | 37 | 38 |
-//                | 39 | 40 | 41 |    | 42 | 43 | 44 |
+// | 0  | 1  | 2  | 3  | 4  | 5  |    | 6  | 7  | 8  | 9  | 10 | 11 |
+// | 12 | 13 | 14 | 15 | 16 | 17 |    | 18 | 19 | 20 | 21 | 22 | 23 |
+// | 24 | 25 | 26 | 27 | 28 | 29 |    | 30 | 31 | 32 | 33 | 34 | 35 |
+//                | 36 | 37 | 38 |    | 39 | 40 | 41 |
 
 / {
 
     combos {
         compatible = "zmk,combos";
 
-        combo_enter {
-            timeout-ms = <50>;
-            key-positions = <26 42>;
-            bindings = <&kp RET>;
-            layers = <0>;
-        };
-
-        combo_tab {
-            timeout-ms = <50>;
-            key-positions = <26 41>;
-            bindings = <&kp TAB>;
-            layers = <0>;
-        };
-
-        combo_adjust {
-            timeout-ms = <50>;
-            key-positions = <40 43>;
-            bindings = <&mo ADJUST>;
-            layers = <0>;
-        };
+        COMBO(enter, &kp RET, 24 39, 0)
+        COMBO(tab, &kp TAB, 24 38, 0)
+        COMBO(adjust, &mo ADJUST, 37 40, -1)
     };
 
     keymap {
