@@ -39,49 +39,49 @@
 
         // Combo for Enter -- J+SPACE
         combo_enter {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <19 39>;
             bindings = <&kp RET>;
         };
 
         // Set up combo for tab -- F+BSPC
         combo_tab {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <16 38>;
             bindings = <&kp TAB>;
         };
 
         // Combo to get to Adjust layer
         combo_adjust {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <37 40>;
             bindings = <&mo ADJUST>;
         };
 
         // Show Alfred search
         combo_alfred {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <13 16>;
             bindings = <&kp LS(LC(LA(LG(A))))>;
         };
 
         // Open Alfred paste menu
         combo_paste {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <13 28>;
             bindings = <&kp LS(LC(LA(LG(V))))>;
         };
         
         // Open Text Expander Search
         combo_te {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <3 5>;
             bindings = <&kp LS(LC(LA(LG(T))))>;
         };
 
         // Quick add todoist task
         combo_quick_add {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <1 5>;
             bindings = <&kp LS(LC(LA(LG(F))))>;
         };
@@ -94,7 +94,7 @@
         };
         
         combo_hyper {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <24 41>;
             bindings = <&kp LS(LC(LA(LGUI)))>;
         };
