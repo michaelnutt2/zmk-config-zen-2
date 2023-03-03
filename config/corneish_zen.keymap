@@ -81,7 +81,7 @@
 //                    | GUI | LWR | BSPC |   | SPC | RSE | ALT |
             bindings = <
     &kp DEL   &kp Q &kp W &kp E    &kp R      &kp T        /**/  &kp Y     &kp U     &kp I     &kp O   &kp P    &kp MINUS
-    &kp LCTRL &kp A &kp S &kp D    &kp F      &kp td_hyper /**/  &kp H     &kp J     &kp K     &kp L   &kp SEMI &kp SQT
+    &kp LCTRL &kp A &kp S &kp D    &kp F      &td_hyper /**/  &kp H     &kp J     &kp K     &kp L   &kp SEMI &kp SQT
     &td_cap   &kp Z &kp X &kp C    &kp V      &kp B        /**/  &kp N     &kp M     &kp COMMA &kp DOT &kp FSLH &kp ESC
                           &kp LGUI &mo LOWER  &kp BSPC     /**/  &kp SPACE &mo RAISE &kp RALT
             >;
