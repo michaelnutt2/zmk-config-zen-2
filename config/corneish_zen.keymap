@@ -25,14 +25,6 @@
            bindings = <&kp LCTRL>, <&caps_word>;
         };
         
-        td_hyper: tap_dance_hyper {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_HYPER";
-            #binding-cells = <0>;
-            tapping-term-ms = <100>;
-            bindings = <&kp G>, <&kp LS(LC(LA(LGUI)))>;
-        };
-        
         td_semi: tap_dance_semi {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_SEMI";
