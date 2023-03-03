@@ -14,13 +14,6 @@
   };
 };
 
-// Key Positions 
-//-----------------------------------------------------------------------------------------
-// | 0  | 1  | 2  | 3  | 4  | 5  |    | 6  | 7  | 8  | 9  | 10 | 11 |
-// | 12 | 13 | 14 | 15 | 16 | 17 |    | 18 | 19 | 20 | 21 | 22 | 23 |
-// | 24 | 25 | 26 | 27 | 28 | 29 |    | 30 | 31 | 32 | 33 | 34 | 35 |
-//                | 36 | 37 | 38 |    | 39 | 40 | 41 |
-
 / {
 
     behaviors {
@@ -29,7 +22,7 @@
            label = "TAP_DANCE_CAPS";
            #binding-cells = <0>;
            tapping-term-ms = <200>;
-           bindings = <&kp LSHFT>, <&caps_word>;
+           bindings = <&kp LCTRL>, <&caps_word>;
         };
         
         td_hyper: tap_dance_hyper {
@@ -69,6 +62,13 @@
         };
     };
 
+// Key Positions 
+//-----------------------------------------------------------------------------------------
+// | 0  | 1  | 2  | 3  | 4  | 5  |    | 6  | 7  | 8  | 9  | 10 | 11 |
+// | 12 | 13 | 14 | 15 | 16 | 17 |    | 18 | 19 | 20 | 21 | 22 | 23 |
+// | 24 | 25 | 26 | 27 | 28 | 29 |    | 30 | 31 | 32 | 33 | 34 | 35 |
+//                | 36 | 37 | 38 |    | 39 | 40 | 41 |
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -81,8 +81,8 @@
 //                    | GUI | LWR | BSPC |   | SPC | RSE | ALT |
             bindings = <
     &kp DEL   &kp Q &kp W &kp E    &kp R      &kp T        /**/  &kp Y     &kp U     &kp I     &kp O   &kp P    &kp MINUS
-    &kp LCTRL &kp A &kp S &kp D    &kp F      &td_hyper /**/  &kp H     &kp J     &kp K     &kp L   &kp SEMI &kp SQT
-    &td_cap   &kp Z &kp X &kp C    &kp V      &kp B        /**/  &kp N     &kp M     &kp COMMA &kp DOT &kp FSLH &kp ESC
+    &td_cap   &kp A &kp S &kp D    &kp F      &td_hyper /**/  &kp H     &kp J     &kp K     &kp L   &kp SEMI &kp SQT
+    &kp LSHFT &kp Z &kp X &kp C    &kp V      &kp B        /**/  &kp N     &kp M     &kp COMMA &kp DOT &kp FSLH &kp ESC
                           &kp LGUI &mo LOWER  &kp BSPC     /**/  &kp SPACE &mo RAISE &kp RALT
             >;
         };
