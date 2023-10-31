@@ -9,7 +9,7 @@
 #define NUM     3
 #define SYS     4
 
-#include combo.dtsi
+#include "combo.dtsi"
 #include "node-free/extra_keys.h"
 
 ZMK_CONDITIONAL_LAYER(FN NAV, SYS)  // FN + NAV --> SYS
